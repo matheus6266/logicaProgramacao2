@@ -48,17 +48,17 @@ function desenhaBandeiraAlemanha() {
 
 }
 
-var somador = 1
+var bandeiraBrasil =  true;
 
 function trocaBandeira() {
 
-    if (somador ==1){
+    if (bandeiraBrasil){
         desenhaBandeiraBrasil();
-        somador--;
+
     } else {
         desenhaBandeiraAlemanha();
-        somador++;
     }
+    bandeiraBrasil = !bandeiraBrasil;
 
 
 }
