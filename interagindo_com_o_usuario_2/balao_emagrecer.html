@@ -12,28 +12,17 @@
 
         var x = evento.pageX - tela.offsetLeft;
         var y = evento.pageY - tela.offsetTop;
-        var shift = evento.shiftKey;
-        var alt = evento.altKey;
+    
 
-// condição para aumentar
 
-        if (shift) {
+        if (evento.shiftKey && evento.altKey){
+            alert("Por favor, somente utilizar um tecla por vez");
 
-            if (tamanhoRaio >= 10 && tamanhoRaio < 40){
-                tamanhoRaio = tamanhoRaio + 10;
-            }
-        }
-        
-// condição para reduzir
-
-        if (alt) {
-
-            if (tamanhoRaio > 10 && tamanhoRaio <= 40) {
-                tamanhoRaio = tamanhoRaio - 5;
-
-            }
-            
-        }
+        } else if (evento.shiftKey && tamanhoRaio + 10 <= 40){
+            tamanhoRaio = tamanhoRaio + 10;
+        } else if (evento.altKey && tamanhoRaio - 5 >= 10){
+            tamanhoRaio = tamanhoRaio - 5;
+        } 
 
             pincel.fillStyle = 'blue';
             pincel.beginPath();
